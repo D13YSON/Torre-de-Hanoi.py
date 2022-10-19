@@ -73,30 +73,46 @@ def print_torre():
 
 def mover_disco(self):
     opcao=input('Para qual torre você deseja mover o disco ? ')
-    if t2.get_nome()== opcao:
+    if t1.get_nome()== opcao:
         self.esta_vazia()
         disco=self.desempilha(opcao)
-        if t2.get_tamanho() == 0:
-            t2.empilha(disco)
+        if t1.get_tamanho() == 0:
+            t1.movimenta(disco)
 
-        elif disco.get_peso() < t2.torre_discos_peso():
-            t2.empilha(disco)
+        elif disco.get_peso() < t1.torre_discos_peso():
+            t1.movimenta(disco)
 
         else:
             print('\nMovimento invalido ! Não pode colocar um disco mais pesado em um disco mais leve.\n')
+            print_torre()
+            return perguntar_t()
+
+    elif t2.get_nome()== opcao:
+        self.esta_vazia()
+        disco=self.desempilha(opcao)
+        if t2.get_tamanho() == 0:
+            t2.movimenta(disco)
+
+        elif disco.get_peso() < t2.torre_discos_peso():
+            t2.movimenta(disco)
+
+        else:
+            print('\nMovimento invalido ! Não pode colocar um disco mais pesado em um disco mais leve.\n')
+            print_torre()
             return perguntar_t()
 
     elif t3.get_nome()== opcao:
         self.esta_vazia()
         disco=self.desempilha(opcao)
         if t3.get_tamanho() == 0:
-            t3.empilha(disco)
+            t3.movimenta(disco)
 
         elif disco.get_peso() < t3.torre_discos_peso():
-            t3.empilha(disco)
+            t3.movimenta(disco)
 
         else:
             print('\nMovimento invalido ! Não pode colocar um disco mais pesado em um disco mais leve.\n')
+            print_torre()
             return perguntar_t()
 
 
@@ -107,7 +123,7 @@ if __name__ == '__main__':
     t1 = Torre('A', [])
     t2 = Torre('B', [])
     t3 = Torre('C', [])
-    d1= Disco(3)
+    '''d1= Disco(3)'''
     '''t2.empilha(d1)'''
-    t3.empilha(d1)
+    '''t3.empilha(d1)'''
 menu()

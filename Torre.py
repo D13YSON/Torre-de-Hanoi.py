@@ -15,6 +15,9 @@ class Torre:
     def empilha(self,disco):
         self._discos.append(disco)
 
+    def movimenta(self,disco):
+        self._discos.insert(0, disco)
+
     def desempilha(self,nome):
         self.get_nome()
         return  self._discos.pop(0)
