@@ -28,6 +28,12 @@ def instanciar_disco():
         return instanciar_disco()
 
 
+def print_torre():
+    t1.to_string_torre()
+    t2.to_string_torre()
+    t3.to_string_torre()
+
+
 def torre_origem():
     torre = input('Torre Origem: ')
 
@@ -52,12 +58,6 @@ def torre_origem():
     else:
         print('Torre inválida!\n')
         return torre_origem()
-
-
-def print_torre():
-    t1.to_string_torre()
-    t2.to_string_torre()
-    t3.to_string_torre()
 
 
 def torre_destino(self):
