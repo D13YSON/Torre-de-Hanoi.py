@@ -32,9 +32,29 @@ class Torre:
 
     def to_string_torre(self):
 
-        print("{:<15} {:<15} ".format('\n'+ self.get_nome(), 'Discos: '+'\n'))
+        print("{:<15}  {:<15}".format('\n'+ self.get_nome(), 'Discos: '+'\n'))
 
         for i in self._discos:
 
-            print("{:<15} {:<15}".format('',i.get_peso()))
+            print("{:<15} {:<15} ".format('',i.get_peso()))
+
+            def triangle(n):
+
+                k = n - 1
+
+                for i in range(0, n):
+
+                    for j in range(0, k):
+                        print(end=" ")
+
+                    k = k - 1
+
+                    for j in range(0, i + 1):
+                        print("□ ", end="")
+
+                    print("\r")
+            n = i.get_peso()
+            triangle(n)
+
+
 
