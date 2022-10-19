@@ -7,4 +7,3 @@ class Disco:
 
     def to_string_disco(self):
         print(self._peso)
-
