@@ -39,21 +39,34 @@ def torre_origem():
 
     if torre == '1':
         if torre == t1.get_nome():
-            torre_destino(t1)
-            print_torre()
-            return torre_origem()
+            if t1.get_tamanho() == 0:
+                print('Torre vazia!\n')
+                return torre_origem()
+            else:
+                torre_destino(t1)
+                print_torre()
+                return torre_origem()
 
     elif torre == '2':
         if torre == t2.get_nome():
-            torre_destino(t2)
-            print_torre()
-            return torre_origem()
+            if t2.get_tamanho() == 0:
+                print('Torre vazia!\n')
+                return torre_origem()
+            else:
+                torre_destino(t2)
+                print_torre()
+                return torre_origem()
 
     elif torre == '3':
         if torre == t3.get_nome():
-            torre_destino(t3)
-            print_torre()
-            return torre_origem()
+            if t3.get_tamanho() == 0:
+                print('Torre vazia!\n')
+                return torre_origem()
+            else:
+
+                torre_destino(t3)
+                print_torre()
+                return torre_origem()
 
     else:
         print('Torre inválida!\n')
