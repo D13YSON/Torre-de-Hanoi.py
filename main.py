@@ -35,7 +35,7 @@ def print_torre():
 
 
 def torre_origem():
-    torre = input('Torre Origem: ')
+    torre = input('\nTorre Origem: ')
 
     if torre == '1':
         if torre == t1.get_nome():
@@ -118,9 +118,8 @@ def torre_destino(self):
             return False
 
     else:
-        print('Torre inválida!')
-        time.sleep(1)
-        return False
+        print('Torre inválida!\n')
+        return torre_origem()
 
 
 if __name__ == '__main__':
