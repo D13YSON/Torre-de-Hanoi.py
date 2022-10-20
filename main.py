@@ -2,6 +2,7 @@ from Torre import Torre
 from Disco import Disco
 import time
 
+
 def inicio():
     print('')
     titulo = '### Torre De Hanoi ### '
@@ -11,10 +12,11 @@ def inicio():
     print('- A quantidade mínima de discos para jogar é 3.')
     print('- A quantidade máxima de discos para jogar é 8.')
 
-    instanciar_disco()
-    print_torre()
-    torre_origem()
+    while True:
 
+        instanciar_disco()
+        print_torre()
+        torre_origem()
 
 def instanciar_disco():
     qtd_disco = int(input('\nInforme a quantidade de discos: '))
@@ -75,6 +77,8 @@ def torre_origem():
 
 def torre_destino(self):
     torre = input('Torre Destino: ')
+    global disco
+
     if t1.get_nome() == torre:
         self.esta_vazia()
         disco = self.desempilha(torre)
@@ -85,9 +89,11 @@ def torre_destino(self):
             t1.movimenta_disco(disco)
 
         else:
-            print('Movimento inválido!')
+            print('Movimento inválido! Selecione uma torre com disco menor')
             time.sleep(1)
-            return False
+            print_torre()
+            self.movimenta_disco(disco)
+            return torre_origem()
 
     elif t2.get_nome() == torre:
         self.esta_vazia()
@@ -99,9 +105,11 @@ def torre_destino(self):
             t2.movimenta_disco(disco)
 
         else:
-            print('Movimento inválido!')
+            print('Movimento inválido! Selecione uma torre com disco menor')
             time.sleep(1)
-            return False
+            print_torre()
+            self.movimenta_disco(disco)
+            return torre_origem()
 
     elif t3.get_nome() == torre:
         self.esta_vazia()
@@ -113,18 +121,23 @@ def torre_destino(self):
             t3.movimenta_disco(disco)
 
         else:
-            print('Movimento inválido!')
+            print('Movimento inválido! Selecione uma torre com disco menor')
             time.sleep(1)
-            return False
+            print_torre()
+            self.movimenta_disco(disco)
+            return torre_origem()
 
     else:
         print('Torre inválida!\n')
         return torre_origem()
 
+def jogar():
+    inicio()
 
 if __name__ == '__main__':
+    global qtd_disco
     t1 = Torre('1', [])
     t2 = Torre('2', [])
     t3 = Torre('3', [])
 
-inicio()
+jogar()
