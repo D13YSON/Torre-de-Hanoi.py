@@ -11,15 +11,13 @@ def inicio():
     print('- A quantidade máxima de discos para jogar é 8.')
 
     instanciar_disco()
+    print_torre()
+    torre_origem()
 
-    while True:
-        if t1.get_tamanho() == 0 and t2.get_tamanho() == 0:
-            print('Você ganhou!')
-            break
-
-        else:
-            print_torre()
-            torre_origem()
+def fim():
+    if t1.get_tamanho() == 0 and t2.get_tamanho() == 0:
+        print('\nVocê ganhou!')
+        exit()
 
 def instanciar_disco():
     qtd_disco = int(input('\nInforme a quantidade de discos: '))
@@ -38,6 +36,7 @@ def print_torre():
     t3.to_string_torre()
 
 def torre_origem():
+    fim()
     torre = input('\nTorre Origem: ')
 
     if torre == '1':
