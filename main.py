@@ -127,4 +127,5 @@ if __name__ == '__main__':
     t3 = Torre('3', [])
 
 inicio()
-
+ 
+print('fim')
