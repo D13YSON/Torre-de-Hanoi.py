@@ -16,3 +16,5 @@ def triangle(n):
 
 if __name__ == '__main__':
     triangle(4)
+
+"teste 2"
